@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>Links</h1>
+  
+        <ul>
+            {% for x in links %}
+            <li><b>Titel: </b>{{ x.Title }} <b>Fra JQ: </b> {{ x.Fra_JQ }} <b>Beskrivelse: </b> {{ x.Beskrivelse }} <b>Sendt: </b>{{ x.Sendt }} <b>Fra LH: </b> {{ x.Fra_F_LH }} <b>Beskriv: </b>{{ x.Beskriv }}</li>
+            {% endfor %}
+</ul>
+
+    </body>
+</html>
