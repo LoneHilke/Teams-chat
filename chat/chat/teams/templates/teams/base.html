@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html>
-    <body>
+{% extends "teams/master.html" %}
 
+{% block title %}
+  Liste over links sendt i TEAMS
+{% endblock %}
+
+
+{% block content %}
+        <p><a href="/">HOME</a></p>
         <h1>Links</h1>
+        <table border='1'>
+          <tr>
+            <th>ID</th>
+            <th>Titel</th>
+            <th>Sendt</th>
+          </tr>
+          {% for x in links %}
+            <tr>
+              <td>{{ x.id }}</td>
+                <td>{{ x.Title }}</td>
+              <td>{{ x.Sendt }}</td>
+            </tr>
+          {% endfor %}
+        </table>
   
-        <ul>
+        <!--<ul>
             {% for x in links %}
-            <li><b>Titel: </b>{{ x.Title }} <b>Fra JQ: </b> {{ x.Fra_JQ }} <b>Beskrivelse: </b> {{ x.Beskrivelse }} <b>Sendt: </b>{{ x.Sendt }} <b>Fra LH: </b> {{ x.Fra_F_LH }} <b>Beskriv: </b>{{ x.Beskriv }}</li>
+            <li><a href="details/{{ x.id }}"><b>Titel: </b>{{ x.Title }} <b>Sendt: </b>{{ x.Sendt }}</a></li>
             {% endfor %}
-</ul>
-
-    </body>
-</html>
+</ul>-->
+<!--<b>Fra JQ: </b> {{ x.Fra_JQ }} <b>Beskrivelse: </b> {{ x.Beskrivelse }}  <b>Fra LH: </b> {{ x.Fra_F_LH }} <b>Beskriv: </b>{{ x.Beskriv }}-->
+{% endblock %}

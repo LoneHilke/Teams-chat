@@ -9,3 +9,6 @@ class Links (models.Model):
     Fra_F_LH = models.URLField(blank=True)
     Beskriv = models.TextField(blank=True)
     #Fuldført = models.CheckConstraint(blank=True)
+
+    def __str__(self):
+      return self.Title

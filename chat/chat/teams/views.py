@@ -11,6 +11,18 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
+def details(request, id):
+  links = Links.objects.get(id=id)
+  template = loader.get_template('teams/details.html')
+  context = {
+    'links': links,
+  }
+  return HttpResponse(template.render(context, request))
 
+def main(request):
+  
+  template = loader.get_template('teams/main.html')
+  
+  return HttpResponse(template.render())
 
 #fra: https://www.w3schools.com/django/django_add_link_details.php
