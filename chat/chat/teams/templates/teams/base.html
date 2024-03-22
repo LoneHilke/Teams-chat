@@ -6,13 +6,21 @@
 
 
 {% block content %}
-        <p><a href="/">HOME</a></p>
+<div class="mycard">
+  <h1>Links</h1>
+  <ul>
+    {% for x in links %}
+      <li onclick="window.location = 'details/{{ x.id }}'">{{ x.Titel }} {{ x.Sendt }}</li>
+    {% endfor %}
+  </ul>
+</div>
+        <!--<p><a href="/">HOME</a></p>
         <h1>Links</h1>
         <table border='1'>
           <tr>
             <th>ID</th>
-            <th>Titel</th>
-            <th>Sendt</th>
+            <th></th>
+            <th></th>
           </tr>
           {% for x in links %}
             <tr>
@@ -21,7 +29,7 @@
               <td>{{ x.Sendt }}</td>
             </tr>
           {% endfor %}
-        </table>
+        </table>-->
   
         <!--<ul>
             {% for x in links %}

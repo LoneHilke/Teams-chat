@@ -6,13 +6,14 @@
 
 
 {% block content %}
-
-<h1>{{ links.Title }} {{ links.Send }}</h1>
-  
-<p><b>Link fra JQ: </b>{{ links.Fra_JQ }}</p>
-<p><b>Beskrivelse: </b>{{ links.Beskrivelse }}</p>
-<p><b>Link fra F-LH: </b>{{ links.Fra_F_LH }}</p>
-<p><b>Beskrivelse: </b>{{ links.Beskriv }}</p>
-<p>Back to <a href="/">Links</a></p>
+<div class="mycard">
+    <h1>{{ links.Title }} {{ links.Send }}</h1>
+      
+    <p><b>Link fra JQ: </b><a href="{{ links.Fra_JQ }}">{{ links.Fra_JQ }}</a></p>
+    <p><b>Beskrivelse: </b>{{ links.Beskrivelse }}</p>
+    <p><b>Link fra F-LH: </b><a href="{{ links.Fra_F_LH }}">{{ links.Fra_F_LH }}</a></p>
+    <p><b>Beskrivelse: </b>{{ links.Beskriv }}</p>
+    <p>Back to <a href="/">Links</a></p>
+</div>
 
 {% endblock %}
