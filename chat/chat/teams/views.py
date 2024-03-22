@@ -25,4 +25,9 @@ def main(request):
   
   return HttpResponse(template.render())
 
+def fun(request):
+    template = loader.get_template('teams/fun.html')
+    
+    return HttpResponse(template.render())
+
 #fra: https://www.w3schools.com/django/django_add_link_details.php
