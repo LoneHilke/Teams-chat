@@ -30,4 +30,22 @@ def fun(request):
     
     return HttpResponse(template.render())
 
+def jq(request):
+  #links = Links.objects.get(id=id)
+  template = loader.get_template('teams/jq.html')
+  #context = {
+    #'links': links,
+  #}
+  return HttpResponse(template.render())
+
+def lh(request, id):
+  links = Links.objects.get(id=id)
+  template = loader.get_template('teams/lh.html')
+  context = {
+    'links': links,
+  }
+  return HttpResponse(template.render(context, request))
+
+
+
 #fra: https://www.w3schools.com/django/django_add_link_details.php

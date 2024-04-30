@@ -1,0 +1,16 @@
+{% extends "teams/master.html" %}
+
+{% block title %}
+  Details about {{ links.Title }} {{ links.Send }}
+{% endblock %}
+
+
+{% block content %}
+<div class="mycard">
+    <h1>{{ links.Title }} {{ links.Sendt }}</h1>
+    <p><b>Link fra F-LH: </b><a href="{{ links.Fra_F_LH }}">{{ links.Fra_F_LH }}</a></p>
+    <p><b>Beskrivelse: </b>{{ links.Beskriv }}</p>
+    <p>Back to <a href="/">Links</a></p>
+</div>
+
+{% endblock %}
