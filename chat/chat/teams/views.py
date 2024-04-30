@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Links
+from .forms import LinksForm
 from django.http import HttpResponse
 from django.template import loader
 
@@ -38,13 +39,27 @@ def jq(request):
   #}
   return HttpResponse(template.render())
 
-def lh(request, id):
-  links = Links.objects.get(id=id)
+def lh(request):
+  links = Links.objects.all
   template = loader.get_template('teams/lh.html')
   context = {
     'links': links,
   }
   return HttpResponse(template.render(context, request))
+
+def add_link(request):
+    links = Links.objects.all()
+    form = LinksForm()
+  
+    if request.method == 'POST':
+      form = LinksForm(request.POST)
+      if form.is_valid():
+        form.save()
+      return redirect('/add_link')
+      
+    context = {'links': links, 'form': form}
+    return render(request, 'teams/add_link.html', context)
+
 
 
 

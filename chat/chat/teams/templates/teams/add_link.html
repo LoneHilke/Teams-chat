@@ -1,0 +1,10 @@
+{% extends "teams/master.html" %}
+{% block content %}
+<h3>Tilføj Link</h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="Tilføj nyt link">
+</form>
+{% endblock %}
