@@ -1,0 +1,40 @@
+{% extends "teams/master.html" %}
+
+{% block title %}
+  Liste over links sendt i TEAMS
+{% endblock %}
+
+
+{% block content %}
+<div class="mycard">
+  <h1>Links fra LH</h1>
+  <ul>
+    {% for x in links %}
+    <li onclick="window.location = 'lh/{{ x.id }}'">{{ links.Fra_F_LH }}<hr> {{ x.Sendt }} <hr>{{ x.Beskriv }} <hr>{{ x.Title }}</li>
+    {% endfor %}
+  </ul>
+</div>
+        <!--<p><a href="/">HOME</a></p>
+        <h1>Links</h1>
+        <table border='1'>
+          <tr>
+            <th>ID</th>
+            <th></th>
+            <th></th>
+          </tr>
+          {% for x in links %}
+            <tr>
+              <td>{{ x.id }}</td>
+                <td>{{ x.Title }}</td>
+              <td>{{ x.Sendt }}</td>
+            </tr>
+          {% endfor %}
+        </table>-->
+  
+        <!--<ul>
+            {% for x in links %}
+            <li><a href="details/{{ x.id }}"><b>Titel: </b>{{ x.Title }} <b>Sendt: </b>{{ x.Sendt }}</a></li>
+            {% endfor %}
+</ul>-->
+<!--<b>Fra JQ: </b> {{ x.Fra_JQ }} <b>Beskrivelse: </b> {{ x.Beskrivelse }}  <b>Fra LH: </b> {{ x.Fra_F_LH }} <b>Beskriv: </b>{{ x.Beskriv }}-->
+{% endblock %}

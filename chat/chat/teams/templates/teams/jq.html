@@ -4,27 +4,16 @@
   Details about {{ links.Title }} {{ links.Send }}
 {% endblock title %}
 {% block content %}
-{% for link in links %}
 
-<p><b>Titel: </b>{{link.Titel}}
-<p><b>Beskrivelse: </b>{{link.Beskrivelse}}
-<p><b>Fra JQ: </b>{{link.Fra_JQ}}
-<p><b>Sendt d.: </b>{{link.Send}}
 
-{% endfor %}
 
-<ul>
-  {% for x in links %}
-    <li onclick="window.location = 'details/{{ x.id }}'">{{ x.Title }} {{ x.Sendt }}</li>
-  {% endfor %}
-</ul>
 
 <div class="mycard">
     <h1>{{ links.Title }} {{ links.Sendt }}</h1>
     <p><b>Link fra JQ: </b><a href="{{ links.Fra_JQ }}">{{ links.Fra_JQ }}</a></p>
     <p><b>Beskrivelse: </b>{{ links.Beskrivelse }}</p>
     <p><b>Sendt d.: </b>{{ links.Sendt }}</p>
-    <p>Back to <a href="/">Links</a></p>
+    <p>Back to <a href={% url  "index2" %}>Links</a></p>
 </div>
 
 {% endblock %}

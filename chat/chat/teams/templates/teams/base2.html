@@ -1,0 +1,18 @@
+{% extends "teams/master.html" %}
+
+{% block title %}
+  Liste over links sendt i TEAMS
+{% endblock %}
+
+
+{% block content %}
+<div class="mycard">
+  <h1>Links fra JQ</h1>
+  <ul>
+    {% for x in links %}
+      <li onclick="window.location = 'jq/{{ x.id }}'">{{ x.Title }} <hr>{{ x.Sendt }} <hr>{{ x.Beskrivelse }} <hr>{{ links.Fra_JQ }}</li>
+    {% endfor %}
+  </ul>
+</div>
+        
+{% endblock %}

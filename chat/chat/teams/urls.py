@@ -6,7 +6,9 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('index/details/<int:id>', views.details, name='details'),
     path('fun/', views.fun, name='fun'),
-    path('jq/', views.jq, name='jq'),
-    path('lh/', views.lh, name='lh'),
+    path('index2/jq/<int:id>', views.jq, name='jq'),
+    path('index3/lh/<int:id>', views.lh, name='lh'),
     path('add_link/', views.add_link, name='add_link'),
+    path('index2/', views.index2, name='index2'),
+    path('index3/', views.index3, name='index3'),
 ]

@@ -31,16 +31,16 @@ def fun(request):
     
     return HttpResponse(template.render())
 
-def jq(request):
-  #links = Links.objects.get(id=id)
+def jq(request, id):
+  links = Links.objects.get(id=id)
   template = loader.get_template('teams/jq.html')
-  #context = {
-    #'links': links,
-  #}
-  return HttpResponse(template.render())
+  context = {
+    'links': links,
+  }
+  return HttpResponse(template.render(context, request))
 
-def lh(request):
-  links = Links.objects.all
+def lh(request, id):
+  links = Links.objects.get(id=id)
   template = loader.get_template('teams/lh.html')
   context = {
     'links': links,
@@ -59,6 +59,22 @@ def add_link(request):
       
     context = {'links': links, 'form': form}
     return render(request, 'teams/add_link.html', context)
+
+def index2(request):
+    links = Links.objects.all().values()
+    template = loader.get_template('teams/base2.html')
+    context = {
+        'links':links
+    }
+    return HttpResponse(template.render(context, request))
+
+def index3(request):
+    links = Links.objects.all().values()
+    template = loader.get_template('teams/base3.html')
+    context = {
+        'links':links
+    }
+    return HttpResponse(template.render(context, request))
 
 
 
