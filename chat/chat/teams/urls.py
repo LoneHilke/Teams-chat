@@ -11,4 +11,5 @@ urlpatterns = [
     path('add_link/', views.add_link, name='add_link'),
     path('index2/', views.index2, name='index2'),
     path('index3/', views.index3, name='index3'),
+    path('lmh/', views.lmh, name='lmh'),
 ]

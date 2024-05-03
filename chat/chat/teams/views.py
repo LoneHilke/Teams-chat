@@ -76,6 +76,10 @@ def index3(request):
     }
     return HttpResponse(template.render(context, request))
 
+def lmh(request):
+    template = loader.get_template('teams/lmh.html')
+    return HttpResponse(template.render())
+
 
 
 
