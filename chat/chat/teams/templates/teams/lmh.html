@@ -3,4 +3,32 @@
 <h1><b><i><u>Links sendt til mig selv</u></i><b/></h1>
     Jeg har prøvet at ligge link ind til sharepoint-liste, <br>da jeg arbejder på at få det med i django
     <p><b>Link fra LMH: </b><a href="https://sonderborg.sharepoint.com/:l:/s/ideertilApps/FHlgWQrAMllCsPQTd9cMrEQBmlzdwMb-wTpqY044uuK7RA?e=15qz10" target="_blank">Sharepoint-liste</a></p>
+    I linket kan der arbejdes videre, hvis der er en der skal tilføjes. 
+    Der er også mulighed for at uploade siden fra EXEL (hvis man har adgang)
+    <hr>
+
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <form action="{% url "teams:lmh" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+        <p></p>
+        <hr>
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </body>
 {% endblock %}

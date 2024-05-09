@@ -7,12 +7,14 @@
 
 {% block content %}
 <div class="mycard">
+  <p>Dem med beskrivelse er fra JQ</p>
   <h1>Links fra JQ</h1>
   <ul>
     {% for x in links %}
       <li onclick="window.location = 'jq/{{ x.id }}'">{{ x.Title }} <hr>{{ x.Sendt }} <hr>{{ x.Beskrivelse }} <hr>{{ links.Fra_JQ }}</li>
     {% endfor %}
   </ul>
+  <p>Back to  <a href="/index2">Fra JQ</a></p>
 </div>
         
 {% endblock %}

@@ -15,7 +15,7 @@ def create_todo(request):
     todo = Todo.objects.create(beskriv=beskriv)
     todo.save()
     todos = Todo.objects.all().order_by('-id')
-    return render(request, 'todo/todo-list.html', {'todos': todos})
+    return render(request, 'todo/todo-list.html', {'todos': todos, 'beskriv':beskriv})
 
 # Marking completed True
 def mark_todo(request, pk):
