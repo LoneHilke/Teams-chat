@@ -23,12 +23,17 @@
 
         <p></p>
         <hr>
-
+        
         {% for row in excel_data %}
+        <table border="2" style="green">
             {% for cell in row %}
+            <tr><td>
                 {{ cell }}&nbsp;&nbsp;
+            </td></tr>
             {% endfor %}
             <br>
+            </table>
         {% endfor %}
+        
     </body>
 {% endblock %}
